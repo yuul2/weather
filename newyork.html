@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gloomysuunyday</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+<body>
+    
+    <div id="weather_info3">
+        <h1 class="day3">오늘의 날씨</h1>
+        <h1 class="city3"></h1>
+    
+    <section>
+        <div class="cont3">
+            <figure class="icon3"></figure>
+            <p class="w_id3"></p>
+        </div>
+        <p class="temp3">
+            <aside>
+                <p class="tem_max3">max</p>
+                <p class="tem_min3">min</p>
+            </aside>
+        </p>
+    </section>
+</div>
+
+<script>
+     //API요청 URL 변수
+     var url='http://api.openweathermap.org/data/2.5/weather?q=newyork&APPID=014f9cb5bedc61da0e1ab39cdcce87a6';
+        $.getJSON(url, function(data){
+            //날짜 데이터 객체
+            // var date1= new Date();
+            // var day = String(date1.getDay());
+            // var date = date1.getDate();
+            // var nowMon = String(date1.getMonth()+1);
+            // var month = new Array('JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC');
+            // var NowToday = month[date1.getMonth()]+"　"+date+'th'];
+           
+         
+            
+            // // nowDay = String(Now.getDate());
+                    
+      
+            var  Now = new Date(),
+            StrNow = String(Now),
+            nowYear = String(Now.getFullYear()),
+            nowMon = String(Now.getMonth()+1),
+            nowDay = String(Now.getDate());
+        var week = new Array('SUN','MON','TUE','WED','THU','FRI','SAT','SUN','MON','TUE','WED','THU','FRI','SAT');              
+        var month = new Array('JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC');
+        var NowToday = month[Now.getMonth()]+"　"+nowDay+'th'+"　"+week[Now.getDay()];
+        
+
+            
+            
+            //날씨데이터 객체
+            var sys = data.sys; 
+            var city = data.name;
+            var weather = data.weather;
+            var main = data.main;
+
+            var wmain = weather[0].main;
+            var w_id = weather[0].id;
+            var icon = weather[0].icon;
+
+            var country = sys.country;
+            var temp =  main.temp;
+            var temp_min = main.temp_min;
+            var temp_max = main.temp_max;
+            var icon_url = 'images/'+ icon;
+            var bg_url='images/' + weather[0].icon;
+
+
+            //날짜 정보 표시
+            $('#weather_info3>.day3').html(NowToday);
+            // 날씨 정보 표시
+            $('#weather_info3>.city3').html(city);
+            $('#weather_info3 .icon3').html("<img src='" + icon_url + ".png'>");
+            $('#weather_info3 .w_id3').html(wmain);
+            $('#weather_info3 .tem_min3').html(parseInt(temp_min-273.15)+'&deg;'+'min');
+            $('#weather_info3 .tem_max3').html(parseInt(temp_max-273.15)+'&deg;'+'max');
+            $('#weather_info3 .temp3').html(parseInt(temp-273.15)+'&deg;');
+            $('#weather_info3').css('background',"url(../"+icon_url+".png)");
+         
+
+        });
+</script>
+
+
+</body>
+</html>
