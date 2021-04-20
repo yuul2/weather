@@ -2,41 +2,59 @@
             margin: 0;
             font-weight: normal;
         }
-        p{
-            color: #333;
-            font-size: 100%;
-        }
+    
         #weather_info{
             position: relative;
-        
             width: 100%;
             padding: 10px;
-            background-size: cover;
             color: #333 !important;
-            background: url(../images/01dbg.png);
+        }
+        #weather_info>h1{
+            font-size: 0.8rem;
         }
       
-        h1{ padding:10px;
-            font-size: 1.8em;
+        
+        #weather_info > .day{
+            padding: 10px !important;
+            font-size: 0.8rem;
             text-align: center;
-            opacity: 0.8;
+        }
+        #weather_info > .city{
+            padding: 0 0 30px 0;
+            font-size: 2.5rem;
         }
         section{
             overflow: hidden;
             text-shadow: 1px 1px 1px #999;
         }
-        section>.w_id{
+        section>.cont>p{
             text-align: center;
-                   }
+            padding: 2% 0 i !important;
+            }
         section>figure>img{
             width: 80px;
         }
         section.temp{
             font-size: 3.4rem;
+            
         }
         aside>p{
             font-size: 1.8em;
-            text-align: center;
+           
+            line-height: 50px;
+        }
+        .cont{
+            padding: 3% 0;
+        }
+   
+        #text{
+            text-align: center !important;
+        }
+        #bg{
+            position: absolute;
+        }
+        section>.temp{
+            padding-top: 50px;
         }
 
       

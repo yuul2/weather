@@ -6,9 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gloomysuunyday</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+                *{
+            margin: 0;
+            font-weight: normal;
+        }
+        p{
+            color: #333;
+            font-size: 100%;
+        }
+        #weather_info3{
+            position: relative;
+        
+            width: 100%;
+            padding: 10px;
+            background-size: cover;
+            color: #333 !important;
+              
+        }
+      
+        h1{ padding:10px;
+            font-size: 1.8em;
+            text-align: center;
+            opacity: 0.8;
+        }
+        section{
+            overflow: hidden;
+            text-shadow: 1px 1px 1px #999;
+        }
+        section>.w_id{
+            text-align: center;
+                   }
+        section>figure>img{
+            width: 80px;
+        }
+        section.temp3{
+            font-size: 3.4rem;
+            
+        }
+        aside>p{
+            font-size: 1.8em;
+            text-align: center;
+            line-height: 50px;
+        }
+        .cont3{
+            padding: 3% 0;
+        }
+    </style>
 </head>
 <body>
     
@@ -31,8 +77,9 @@
 </div>
 
 <script>
+
      //API요청 URL 변수
-     var url='http://api.openweathermap.org/data/2.5/weather?q=newyork&APPID=014f9cb5bedc61da0e1ab39cdcce87a6';
+     var url='http://api.openweathermap.org/data/2.5/weather?q=Brooklyn&APPID=014f9cb5bedc61da0e1ab39cdcce87a6';
         $.getJSON(url, function(data){
             //날짜 데이터 객체
             // var date1= new Date();
