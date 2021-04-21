@@ -57,4 +57,22 @@
          
 
 
+            if (icon.charAt(2) === 'n') {
+                $('#weather_info>.day').css('color','#fff');        
+                $('#weather_info>.city').css('color','#fff');
+                $('#weather_info .w_id').css('color','#fff');
+                $('#weather_info .temp').css('color','#fff');
+                $('#weather_info .tem_min').css('color','#fff');
+                $('#weather_info .tem_max').css('color','#fff');
+                $('#weather_info .to_w').css('color','#fff');
+              } else {
+                 $('#weather_info>.day').css('color','#333');        
+                $('#weather_info>.city').css('color','#333');
+                $('#weather_info .w_id').css('color','#333');
+                $('#weather_info .temp').css('color','#333');
+                $('#weather_info .tem_min').css('color','#333');
+                $('#weather_info .tem_max').css('color','#333');
+                $('#weather_info .to_w').css('color','#333');
+              }
+
         });

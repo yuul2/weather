@@ -9,72 +9,152 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <style>
-                *{
+        *{
             margin: 0;
             font-weight: normal;
         }
-        p{
-            color: #333;
-            font-size: 100%;
+        @font-face {
+            font-family: 'paybooc-Medium';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Medium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        .container3{
+            width: 300px;
+            height: 500px;
+            margin: 0 auto;
+            border: 1px solid #FFF;
+            border-radius: 10px 10px 10px 10px;
+            box-shadow: 5px 5px 5px rgb(185, 191, 194);
         }
         #weather_info3{
+            font-family: 'paybooc-Medium';
             position: relative;
-        
             width: 100%;
             padding: 10px;
-            background-size: cover;
             color: #333 !important;
-              
+        }
+        #weather_info3>h1{
+            font-size: 0.8rem;
+            font-family: 'paybooc-Medium';
         }
       
-        h1{ padding:10px;
-            font-size: 1.8em;
-            text-align: center;
-            opacity: 0.8;
+        .clfix{
+            clear: both;
+        }
+        #weather_info3> .day3{
+            padding: 10px !important;
+            float: left;
+            font-size: 0.8rem;
+            font-family: 'paybooc-Medium';
+            font-weight: 600;
+        }
+        #weather_info3 > .city3{
+            padding: 10px !important;
+            font-size: 0.8rem;
+            float: right;
+            margin-right: 20px;
+            font-family: 'paybooc-Medium';
+            font-weight: 600;
         }
         section{
             overflow: hidden;
-            text-shadow: 1px 1px 1px #999;
+            /* text-shadow: 1px 1px 1px #999; */
         }
-        section>.w_id{
+        section>.cont3>p{
             text-align: center;
-                   }
-        section>figure>img{
-            width: 80px;
-        }
-        section.temp3{
+            padding: 2% 0 i !important;
+            font-family: 'paybooc-Medium';
+            }
+        section > .cont3> figure > img {
+            position: absolute;
+            z-index: 1;
+            top:0px;
+            width:301px;
+            left: 0;
+         }
+
+        /* section.temp{
             font-size: 3.4rem;
             
+        } */
+        section>aside{
+            margin: 240px 0 0 0;
         }
         aside>p{
-            font-size: 1.8em;
-            text-align: center;
+            font-size: 1.2rem;
             line-height: 50px;
+            font-family: 'paybooc-Medium';
         }
         .cont3{
             padding: 3% 0;
         }
+   
+      
+        #bg3{
+            position: absolute;
+        }
+        #bg3>img{
+            width: 301px;
+            height: 501px;
+            border-radius:  5px 5px 5px 5px;
+
+        }
+        /* section>.temp{
+            padding-top: 50px;
+        } */
+
+      .w_id3{
+          float: left;
+          margin-top: 10px;
+        margin-left: 10px;
+        font-size: 1.2rem;
+        font-weight: 900;
+        font-family: 'paybooc-Medium';
+      }
+      .temp3{
+          float: right;
+          margin-top: 12px;
+          margin-right: 20px;
+          font-family: 'paybooc-Medium';
+          font-weight: 600;
+      }
+      .to_w3{
+        font-family: 'paybooc-Medium';
+        margin-left: -190px;
+          margin-top: 24px;
+          font-size: 1.2rem;
+          font-weight: 900;
+      }
     </style>
 </head>
 <body>
     
-    <div id="weather_info3">
-        <h1 class="day3">오늘의 날씨</h1>
-        <h1 class="city3"></h1>
-    
-    <section>
-        <div class="cont3">
-            <figure class="icon3"></figure>
-            <p class="w_id3"></p>
-        </div>
-        <p class="temp3">
+    <div class="container3">
+        <div id="bg3"></div>
+        <div id="weather_info3">
+            <h1 class="day3">오늘의 날씨</h1>
+            <h1 class="city3"></h1>
+            <!-- <div id="text"></div> -->
+        <div class="clfix"></div>
+        <section>
+            <div class="cont3">
+                <figure class="icon3"></figure>
+            </div>
             <aside>
                 <p class="tem_max3">max</p>
                 <p class="tem_min3">min</p>
             </aside>
-        </p>
-    </section>
-</div>
+            <p class="to_w3"> TODAY IS</p>
+            <p class="w_id3"></p>
+            <p class="temp3">  
+                
+            </p>
+        </section>
+    </div>
+    </div>
+
+
 
 <script>
 
@@ -121,7 +201,7 @@
             var temp_min = main.temp_min;
             var temp_max = main.temp_max;
             var icon_url = 'images/'+ icon;
-            var bg_url='images/' + weather[0].icon;
+            
 
 
             //날짜 정보 표시
@@ -133,7 +213,30 @@
             $('#weather_info3 .tem_min3').html(parseInt(temp_min-273.15)+'&deg;'+'min');
             $('#weather_info3 .tem_max3').html(parseInt(temp_max-273.15)+'&deg;'+'max');
             $('#weather_info3 .temp3').html(parseInt(temp-273.15)+'&deg;');
-            $('#weather_info3').css('background',"url(../"+icon_url+".png)");
+            $('#bg3').html("<img src='images/"
+            +icon+"bgbr.png'>");
+
+
+
+
+            if (icon.charAt(2) === 'n') {
+        $('#weather_info3>.day3').css('color','#fff');        
+        $('#weather_info3>.city3').css('color','#fff');
+        $('#weather_info3 .w_id3').css('color','#fff');
+        $('#weather_info3 .temp3').css('color','#fff');
+        $('#weather_info3 .tem_min3').css('color','#fff');
+        $('#weather_info3 .tem_max3').css('color','#fff');
+        $('#weather_info3 .to_w3').css('color','#fff');
+      } else {
+         $('#weather_info3>.day3').css('color','#333');        
+        $('#weather_info3>.city3').css('color','#333');
+        $('#weather_info3 .w_id3').css('color','#333');
+        $('#weather_info3 .temp3').css('color','#333');
+        $('#weather_info3 .tem_min3').css('color','#333');
+        $('#weather_info3 .tem_max3').css('color','#333');
+        $('#weather_info3 .to_w3').css('color','#333');
+      }
+         
          
 
         });

@@ -14,47 +14,117 @@
             margin: 0;
             font-weight: normal;
         }
-        p{
-            color: #333;
-            font-size: 100%;
+        @font-face {
+            font-family: 'paybooc-Medium';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Medium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        .container2{
+            width: 300px;
+            height: 500px;
+            margin: 0 auto;
+            border: 1px solid #FFF;
+            border-radius: 10px 10px 10px 10px;
+            box-shadow: 5px 5px 5px rgb(185, 191, 194);
         }
         #weather_info2{
+            font-family: 'paybooc-Medium';
             position: relative;
-        
             width: 100%;
             padding: 10px;
-            background-size: cover;
             color: #333 !important;
-              
+        }
+        #weather_info2>h1{
+            font-size: 0.8rem;
+            font-family: 'paybooc-Medium';
         }
       
-        h1{ padding:10px;
-            font-size: 1.8em;
-            text-align: center;
-            opacity: 0.8;
+        .clfix{
+            clear: both;
+        }
+        #weather_info2 > .day2{
+            padding: 10px !important;
+            float: left;
+            font-size: 0.8rem;
+            font-family: 'paybooc-Medium';
+            font-weight: 600;
+        }
+        #weather_info2 > .city2{
+            padding: 10px !important;
+            font-size: 0.8rem;
+            float: right;
+            margin-right: 20px;
+            font-family: 'paybooc-Medium';
+            font-weight: 600;
         }
         section{
             overflow: hidden;
-            text-shadow: 1px 1px 1px #999;
+            /* text-shadow: 1px 1px 1px #999; */
         }
-        section>.w_id{
+        section>.cont2>p{
             text-align: center;
-                   }
-        section>figure>img{
-            width: 80px;
-        }
-        section.temp2{
+            padding: 2% 0 i !important;
+            font-family: 'paybooc-Medium';
+            }
+        section > .cont2> figure > img {
+            position: absolute;
+            z-index: 1;
+            top:0px;
+            width:301px;
+            left: 0;
+         }
+
+        /* section.temp{
             font-size: 3.4rem;
             
+        } */
+        section>aside{
+            margin: 240px 0 0 0;
         }
-          aside>p{
-            font-size: 1.8em;
-            text-align: center;
+        aside>p{
+            font-size: 1.2rem;
             line-height: 50px;
+            font-family: 'paybooc-Medium';
         }
         .cont2{
             padding: 3% 0;
         }
+   
+       
+        #bg2{
+            position: absolute;
+        }
+        #bg2>img{
+            width: 301px;
+            height: 501px;
+            border-radius:  5px 5px 5px 5px;
+
+        }
+    
+
+      .w_id2{
+          float: left;
+          margin-top: 10px;
+        margin-left: 10px;
+        font-size: 1.2rem;
+        font-weight: 900;
+        font-family: 'paybooc-Medium';
+      }
+      .temp2{
+          float: right;
+          margin-top: 12px;
+          margin-right: 20px;
+          font-family: 'paybooc-Medium';
+          font-weight: 600;
+      }
+      .to_w2{
+        font-family: 'paybooc-Medium';
+        margin-left: -190px;
+          margin-top: 24px;
+          font-size: 1.2rem;
+          font-weight: 900;
+      }
 
     </style>
     
@@ -62,23 +132,29 @@
 <body>
 
     
-    <div id="weather_info2">
-        <h1 class="day2">오늘의 날씨</h1>
-        <h1 class="city2"></h1>
-    
-    <section>
-        <div class="cont2">
-            <figure class="icon2"></figure>
-            <p class="w_id2"></p>
-        </div>
-        <p class="temp2">
+    <div class="container2">
+        <div id="bg2"></div>
+        <div id="weather_info2">
+            <h1 class="day2">오늘의 날씨</h1>
+            <h1 class="city2"></h1>
+            <!-- <div id="text"></div> -->
+        <div class="clfix"></div>
+        <section>
+            <div class="cont2">
+                <figure class="icon2"></figure>
+            </div>
             <aside>
                 <p class="tem_max2">max</p>
                 <p class="tem_min2">min</p>
             </aside>
-        </p>
-    </section>
-</div>
+            <p class="to_w2"> TODAY IS</p>
+            <p class="w_id2"></p>
+            <p class="temp2">  
+                
+            </p>
+        </section>
+    </div>
+    </div>
 
 
 <script>
@@ -139,7 +215,29 @@
             $('#weather_info2 .tem_max2').html(parseInt(temp_max-273.15)+'&deg;'+'max');
             $('#weather_info2 .temp2').html(parseInt(temp-273.15)+'&deg;');
             $('#weather_info2').css('background',"url(../"+icon_url+".png)");
-         
+
+
+
+            
+
+            if (icon.charAt(2) === 'n') {
+                $('#weather_info2 >.day2').css('color','#fff');        
+                $('#weather_info2 >.city2').css('color','#fff');
+                $('#weather_info2  .w_id2').css('color','#fff');
+                $('#weather_info2  .temp2').css('color','#fff');
+                $('#weather_info2  .tem_min2').css('color','#fff');
+                $('#weather_info2  .tem_max2').css('color','#fff');
+                $('#weather_info2  .to_w2').css('color','#fff');
+              } else {
+                 $('#weather_info2 >.day2').css('color','#333');        
+                $('#weather_info2 >.city2').css('color','#333');
+                $('#weather_info2  .w_id2').css('color','#333');
+                $('#weather_info2  .temp2').css('color','#333');
+                $('#weather_info2  .tem_min2').css('color','#333');
+                $('#weather_info2  .tem_max2').css('color','#333');
+                $('#weather_info2  .to_w2').css('color','#333');
+              }
+
 
         });
 </script>

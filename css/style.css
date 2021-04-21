@@ -10,7 +10,7 @@
         }
         .container{
             width: 300px;
-            height: 650px;
+            height: 500px;
             margin: 0 auto;
             border: 1px solid #FFF;
             border-radius: 10px 10px 10px 10px;
@@ -58,7 +58,7 @@
         section > .cont> figure > img {
             position: absolute;
             z-index: 1;
-           top:50px;
+            top:0px;
             width:301px;
             left: 0;
          }
@@ -68,10 +68,11 @@
             
         } */
         section>aside{
-            margin: 430px 0 0 0;
+            margin: 240px 0 0 0;
         }
         aside>p{
-            font-size: 1.8em;
+            font-size: 1.2rem;
+            font-weight: 600;
             line-height: 50px;
             font-family: 'paybooc-Medium';
         }
@@ -87,7 +88,7 @@
         }
         #bg>img{
             width: 301px;
-            height: 651px;
+            height: 501px;
             border-radius:  5px 5px 5px 5px;
 
         }
@@ -99,21 +100,21 @@
           float: left;
           margin-top: 10px;
         margin-left: 10px;
-        font-size: 2rem;
-        font-weight: 600;
+        font-size: 1.2rem;
+        font-weight: 900;
         font-family: 'paybooc-Medium';
       }
       .temp{
           float: right;
-          margin-top: 25px;
+          margin-top: 12px;
           margin-right: 20px;
           font-family: 'paybooc-Medium';
           font-weight: 600;
       }
       .to_w{
         font-family: 'paybooc-Medium';
-        margin-left: -224px;
-          margin-top: 44px;
-          font-size: 2rem;
-          font-weight: 600;
+        margin-left: -190px;
+          margin-top: 24px;
+          font-size: 1.2rem;
+          font-weight: 900;
       }
