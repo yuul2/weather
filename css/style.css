@@ -2,8 +2,22 @@
             margin: 0;
             font-weight: normal;
         }
-    
+        @font-face {
+            font-family: 'paybooc-Medium';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Medium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        .container{
+            width: 300px;
+            height: 650px;
+            margin: 0 auto;
+            border: 1px solid #FFF;
+            border-radius: 10px 10px 10px 10px;
+            box-shadow: 5px 5px 5px rgb(185, 191, 194);
+        }
         #weather_info{
+            font-family: 'paybooc-Medium';
             position: relative;
             width: 100%;
             padding: 10px;
@@ -11,37 +25,55 @@
         }
         #weather_info>h1{
             font-size: 0.8rem;
+            font-family: 'paybooc-Medium';
         }
       
-        
+        .clfix{
+            clear: both;
+        }
         #weather_info > .day{
             padding: 10px !important;
+            float: left;
             font-size: 0.8rem;
-            text-align: center;
+            font-family: 'paybooc-Medium';
+            font-weight: 600;
         }
         #weather_info > .city{
-            padding: 0 0 30px 0;
-            font-size: 2.5rem;
+            padding: 10px !important;
+            font-size: 0.8rem;
+            float: right;
+            margin-right: 20px;
+            font-family: 'paybooc-Medium';
+            font-weight: 600;
         }
         section{
             overflow: hidden;
-            text-shadow: 1px 1px 1px #999;
+            /* text-shadow: 1px 1px 1px #999; */
         }
         section>.cont>p{
             text-align: center;
             padding: 2% 0 i !important;
+            font-family: 'paybooc-Medium';
             }
-        section>figure>img{
-            width: 80px;
-        }
-        section.temp{
+        section > .cont> figure > img {
+            position: absolute;
+            z-index: 1;
+           top:50px;
+            width:301px;
+            left: 0;
+         }
+
+        /* section.temp{
             font-size: 3.4rem;
             
+        } */
+        section>aside{
+            margin: 430px 0 0 0;
         }
         aside>p{
             font-size: 1.8em;
-           
             line-height: 50px;
+            font-family: 'paybooc-Medium';
         }
         .cont{
             padding: 3% 0;
@@ -53,9 +85,35 @@
         #bg{
             position: absolute;
         }
-        section>.temp{
-            padding-top: 50px;
-        }
+        #bg>img{
+            width: 301px;
+            height: 651px;
+            border-radius:  5px 5px 5px 5px;
 
-      
- 
+        }
+        /* section>.temp{
+            padding-top: 50px;
+        } */
+
+      .w_id{
+          float: left;
+          margin-top: 10px;
+        margin-left: 10px;
+        font-size: 2rem;
+        font-weight: 600;
+        font-family: 'paybooc-Medium';
+      }
+      .temp{
+          float: right;
+          margin-top: 25px;
+          margin-right: 20px;
+          font-family: 'paybooc-Medium';
+          font-weight: 600;
+      }
+      .to_w{
+        font-family: 'paybooc-Medium';
+        margin-left: -224px;
+          margin-top: 44px;
+          font-size: 2rem;
+          font-weight: 600;
+      }

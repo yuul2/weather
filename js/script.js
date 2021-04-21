@@ -51,13 +51,10 @@
             $('#weather_info .w_id').html(wmain);
             $('#weather_info .tem_min').html(parseInt(temp_min-273.15)+'&deg;'+'min');
             $('#weather_info .tem_max').html(parseInt(temp_max-273.15)+'&deg;'+'max');
-            $('#weather_info .temp').html('온도'+'&nbsp'+ '&nbsp'+'&nbsp'+ parseInt(temp-273.15)+'&deg;');
+            $('#weather_info .temp').html(parseInt(temp-273.15)+'&deg;');
             $('#bg').html("<img src='images/"
             +icon+"bg.png'>");
          
 
-            if(icon==='01d' || icon==='01n'){
-                $('#text').html('화창한 날씨 :)');
-            }
 
         });
